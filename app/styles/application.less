@@ -1,0 +1,66 @@
+// ### Bootstrap
+@import "./bootstrap-3.1.1/bootstrap.less";
+
+.address {
+  font-size: 26px;
+}
+
+.locked {
+  min-height: 30px;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+}
+
+.open {
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+}
+
+.panel {
+  border: none;
+}
+
+.striped-true {
+  padding: 6px;
+  padding-left: 12px;
+  i {
+    color: white
+  }
+  border: none;
+  color: white;
+
+}
+
+.striped-false {
+  padding: 6px;
+  padding-left: 12px;
+  i {
+    color: white
+  }
+  border: none;
+  color: white;
+
+}
+
+.form-address {
+  input {
+    font-size: 23px;
+    font-weight: 200;
+    height: 46px;
+    border-radius: none;
+  }
+
+  .input-group-addon {
+    i {
+      color: white;
+    }
+  }
+
+  .true {
+    background: -webkit-repeating-linear-gradient(135deg, lighten(@brand-danger, 10%), lighten(@brand-danger, 10%) 10px, darken(@brand-danger, 15%) 10px, darken(@brand-danger, 15%) 20px);
+  background: repeating-linear-gradient(135deg, @brand-danger, @brand-danger 10px, darken(@brand-danger, 15%) 10px, darken(@brand-danger, 15%) 20px);
+  }
+
+  .false {
+    background: -webkit-repeating-linear-gradient(135deg, lighten(@brand-success, 10%), lighten(@brand-success, 10%) 10px, darken(@brand-success, 15%) 10px, darken(@brand-success, 15%) 20px);
+  background: repeating-linear-gradient(135deg, @brand-success, @brand-success 10px, darken(@brand-success, 15%) 10px, darken(@brand-success, 15%) 20px);
+  }
+}
