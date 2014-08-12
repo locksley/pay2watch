@@ -8,7 +8,7 @@
  * Controller of the videoApp
  */
 angular.module('videoApp').controller('MainCtrl', function($scope) {
-  $scope.address = "mn5hhUMGcApWD5ZAvTGXdwtUeg5PwrKASy"
+  $scope.address = "13PvFCHQukb2gPm66uCeN7nhbNY3eGwGVM"
   $scope.locked = true
 
   var opts = {
