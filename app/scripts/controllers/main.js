@@ -46,6 +46,7 @@ angular.module('videoApp').controller('MainCtrl', function($scope) {
 
   ws.onmessage = function(e) {
     var data = JSON.parse(e.data)
+    console.log(data)
     if (data.op !== "broadcast") return
     beep()
 
