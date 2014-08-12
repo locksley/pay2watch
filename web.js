@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan("combined"));
 
 // Static Asset links
-app.use(gzippo.staticGzip(__dirname + "/dist"));
+app.use(gzippo.staticGzip(__dirname + "/dist/"));
 
 // 404, redirect to home, event for 404 assets
 app.get("*", function(req, res) {
