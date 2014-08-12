@@ -1,7 +1,3 @@
 ### Notes
 
-
-Next to address
-
-Deploy
-Find cool video
+This is an experimental project that moentizes video through Bitcoin.
