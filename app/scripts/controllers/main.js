@@ -7,8 +7,14 @@
  * # MainCtrl
  * Controller of the videoApp
  */
-angular.module('videoApp').controller('MainCtrl', function($scope) {
-  $scope.address = "13PvFCHQukb2gPm66uCeN7nhbNY3eGwGVM"
+angular.module('videoApp').controller('MainCtrl', function($scope, $routeParams) {
+  if (window.location.origin.match(/localhost/) || $routeParams.testnet) {
+    $scope.net = "testnet"
+    $scope.address = "mqDbDswsAPEvgUZ6Y9ucoV9Gv2bR4ow3QW"
+  } else {
+    $scope.net = "mainnet"
+    $scope.address = "13PvFCHQukb2gPm66uCeN7nhbNY3eGwGVM"
+  }
   $scope.locked = true
 
   var opts = {
@@ -29,10 +35,30 @@ angular.module('videoApp').controller('MainCtrl', function($scope) {
     top: '50%', // Top position relative to parent
     left: '50%' // Left position relative to parent
   };
-  var target = document.getElementById('spinner');
-  var spinner = new Spinner(opts).spin(target);
 
-  var ws = new WebSocket("wss://socket-mainnet.helloblock.io")
+  var smallopts = {
+    lines: 12, // The number of lines to draw
+    length: 8, // The length of each line
+    width: 2, // The line thickness
+    radius: 5, // The radius of the inner circle
+    corners: 1, // Corner roundness (0..1)
+    rotate: 0, // The rotation offset
+    direction: 1, // 1: clockwise, -1: counterclockwise
+    color: 'gray', // #rgb or #rrggbb or array of colors
+    speed: 1, // Rounds per second
+    trail: 60, // Afterglow percentage
+    shadow: false, // Whether to render a shadow
+    hwaccel: false, // Whether to use hardware acceleration
+    className: 'spinner', // The CSS class to assign to the spinner
+    zIndex: 2000000000, // The z-index (defaults to 2000000000)
+    top: '50%', // Top position relative to parent
+    left: '97%' // Left position relative to parent
+  };
+
+  var target = document.getElementById('spinner');
+  var spinner = new Spinner(smallopts).spin(target);
+
+  var ws = new WebSocket("wss://socket-" + $scope.net + ".helloblock.io")
 
   ws.onopen = function() {
     console.log("CONNECTED")
