@@ -32,7 +32,7 @@ angular.module('videoApp').controller('MainCtrl', function($scope) {
   var target = document.getElementById('spinner');
   var spinner = new Spinner(opts).spin(target);
 
-  var ws = new WebSocket("wss://socket-testnet.helloblock.io")
+  var ws = new WebSocket("wss://socket-mainnet.helloblock.io")
 
   ws.onopen = function() {
     console.log("CONNECTED")
