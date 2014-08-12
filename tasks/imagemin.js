@@ -4,7 +4,7 @@ module.exports = function(opts) {
       files: [{
         expand: true,
         cwd: 'app/images',
-        src: '{,*/}*.{png,jpg,jpeg,gif,mp4}',
+        src: '{,*/}*.{png,jpg,jpeg,gif,mp4,wav}',
         dest: 'dist/images'
       }]
     }
